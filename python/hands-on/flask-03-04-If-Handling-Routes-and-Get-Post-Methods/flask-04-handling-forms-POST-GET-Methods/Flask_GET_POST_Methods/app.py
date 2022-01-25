@@ -14,7 +14,6 @@ def lcm(num1,num2):
             common_multiplications.append(i) 
     return min(common_multiplications)
    
-
 # Create a function named `index` which uses template file named `index.html` 
 # send two numbers as template variable to the app.py and assign route of no path ('/') 
 @app.route("/")
@@ -31,10 +30,10 @@ def calculate():
     if request.method == "POST":
         num1 = request.form.get("number1")
         num2 = request.form.get("number2")
-        if ((num1 is not None) and (num2 is not None)):
+        if (num1!="" and num2!=""):
             return render_template("result.html", result1 = num1, result2 = num2, lcm = lcm(int(num1),int(num2)), developer_name = 'Temelci')
         else:
-            return render_template("result.html", developer_name = 'Temelci')
+            return index()
     else:
         return render_template("result.html", developer_name = 'Temelci')
 
