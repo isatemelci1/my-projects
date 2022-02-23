@@ -58,3 +58,7 @@ Outputs:
       - http://${PublicAddress}
       - PublicAddress: !GetAtt WebServerHost.PublicDnsName
     Description: Project Application URL
+  
+  WebServerPrivateIp:
+    Value: !Ref WebServerHost
+    Description: Project Private Ip
